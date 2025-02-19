@@ -22,7 +22,7 @@ export default function ContactSection() {
       className="relative flex min-h-screen w-full"
       aria-labelledby="contact-heading"
     >
-      <div className="mx-auto flex flex-col justify-evenly gap-10 p-8 xl:w-[1100px]">
+      <div className="mx-auto flex flex-col gap-8 p-8 xl:w-[1100px]">
         <header className="flex w-full flex-col gap-4 text-center">
           <h2 id="contact-heading" className="text-4xl font-semibold">
             Contact Me
