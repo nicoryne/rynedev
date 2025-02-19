@@ -18,7 +18,7 @@ export default function BurgerMenu() {
           animate={{ rotate: open ? 130 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <Squares2X2Icon className="fill-thunder h-auto w-8" />
+          <Squares2X2Icon className="h-auto w-8 fill-thunder" />
         </motion.button>
       </div>
       <AnimatePresence>
@@ -33,7 +33,11 @@ export default function BurgerMenu() {
             <ul className="flex flex-col justify-end gap-6 p-8 text-end">
               {navigationLinks.map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href} className="text-thunder text-4xl">
+                  <Link
+                    href={link.href}
+                    className="text-4xl text-thunder"
+                    onClick={() => setOpen(!open)}
+                  >
                     {link.text}
                   </Link>
                 </li>

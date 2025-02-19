@@ -19,19 +19,22 @@ export default function HeroAnimatedWord() {
   }, []);
 
   return (
-    <div className="relative inline-block">
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.span
-          key={words[index]}
-          initial={{ opacity: 0, x: -400, scale: 0.8 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={{ opacity: 0, x: 400, scale: 0.8 }}
-          transition={{ duration: 1 }}
-          className="text-honey font-semibold"
-        >
-          {words[index]}.
-        </motion.span>
-      </AnimatePresence>
-    </div>
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.span
+        key={words[index]}
+        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: -20, scale: 0.8 }}
+        transition={{
+          type: 'spring',
+          stiffness: 120,
+          damping: 14,
+          mass: 0.8
+        }}
+        className="font-semibold text-honey"
+      >
+        {words[index]}.
+      </motion.span>
+    </AnimatePresence>
   );
 }

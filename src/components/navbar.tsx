@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BurgerMenu from './burger-menu';
 import { navigationLinks } from '@/lib/navigation-links';
+import MotionComponent from './motion-component';
 
 export default function Navbar() {
   return (
@@ -10,7 +11,7 @@ export default function Navbar() {
         <div className="flex justify-between">
           <Link href="#" className="flex items-center gap-1">
             <span className="font-semibold">RYNE</span>
-            <span className="text-honey font-bold">.</span> <span>DEV</span>
+            <span className="font-bold text-honey">.</span> <span>DEV</span>
           </Link>
 
           <div className="block md:hidden">
@@ -19,14 +20,25 @@ export default function Navbar() {
           <div className="hidden md:block">
             <ul className="flex gap-6">
               {navigationLinks.map((link, index) => (
-                <li key={index}>
+                <MotionComponent
+                  type="li"
+                  key={index}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.9,
+                    ease: 'easeIn',
+                    delay: (navigationLinks.length - 1 - index) * 0.1,
+                    type: 'spring'
+                  }}
+                >
                   <Link
                     href={link.href}
-                    className="text-thunder hover:text-honey text-base transition-colors duration-200 ease-in"
+                    className="text-base text-thunder transition-colors duration-200 ease-in hover:text-honey"
                   >
                     {link.text}
                   </Link>
-                </li>
+                </MotionComponent>
               ))}
             </ul>
           </div>
