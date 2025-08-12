@@ -13,7 +13,7 @@ export default function BurgerMenu() {
     <>
       <div className="flex items-center gap-4">
         <motion.button
-          className="rounded-full bg-white p-2"
+          className="rounded-full bg-transparent px-4"
           onClick={() => setOpen(!open)}
           animate={{ rotate: open ? 130 : 0 }}
           transition={{ duration: 0.3 }}

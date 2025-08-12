@@ -1,12 +1,27 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import BurgerMenu from './burger-menu';
 import { navigationLinks } from '@/lib/navigation-links';
 import MotionComponent from './motion-component';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed inset-0 top-0 z-50 h-24 w-full bg-white">
+    <nav
+      className={`fixed inset-0 top-0 z-50 h-20 w-full px-4 transition-all duration-300 ${scrolled ? 'bg-white/90 shadow-lg backdrop-blur-lg' : 'bg-transparent'}`}
+    >
       <div className="mx-auto p-8 xl:w-[1100px]">
         <div className="flex justify-between">
           <Link href="#" className="flex items-center gap-1">
