@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed inset-0 top-0 z-50 h-20 w-full px-4 transition-all duration-300 ${scrolled ? 'bg-white/90 shadow-lg backdrop-blur-lg' : 'bg-transparent'}`}
+      className={`fixed inset-0 top-0 z-50 h-20 w-screen px-4 transition-all duration-300 ${scrolled ? 'bg-white/90 shadow-lg backdrop-blur-lg' : 'bg-transparent'}`}
     >
       <div className="mx-auto p-8 xl:w-[1100px]">
         <div className="flex justify-between">
