@@ -70,7 +70,7 @@ export default function HeroSection() {
         <div className="flex w-full flex-col gap-4 md:flex-row md:gap-12">
           <Button3D href={'#websites'} text={'My Websites'} aria-label="View my websites" />
           <Button3D href={'#about'} text={'About Me'} aria-label="Learn more about me" />
-          <Button3D href={'#contact'} text={`Let's Talk!`} aria-label="Contact me" />
+          <Button3D href={'#contact'} text={`Let's Talk!`} aria-label="Contact me" />{' '}
         </div>
       </MotionComponent>
     </section>

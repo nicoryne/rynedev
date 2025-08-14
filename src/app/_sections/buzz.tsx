@@ -23,7 +23,7 @@ export default function BuzzIntro() {
           </h2>
           <p className="mx-auto max-w-96 text-justify text-lg text-neutral-500 md:text-2xl">
             Every task is a canvas to innovate, push boundaries, and ensure that my work reflects my
-            best. Just like a bee buzzing with purpose, I strive to do my duties— and do them well.
+            best. Just like a bee buzzing with purpose, I strive to do my duties and do them well.
             From the initial project mockup to the final deployment or revision, I am dedicated to
             keep learning, building, and buzzing forward!
           </p>

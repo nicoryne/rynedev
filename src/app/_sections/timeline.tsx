@@ -5,6 +5,7 @@ import TimelineItem from '@/components/timeline-item';
 import Button3D from '@/components/button-3d';
 import Image from 'next/image';
 import { timelineData } from '@/lib/timeline-data';
+import Link from 'next/link';
 
 export default function TimelineSection() {
   return (
@@ -23,10 +24,10 @@ export default function TimelineSection() {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -z-10 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_70%_70%_at_70%_30%,#000_60%,transparent_100%)]" />
-        <div className="absolute top-1/4 -left-20 h-40 w-40 rounded-full bg-honey/5" />
-        <div className="absolute bottom-1/4 -right-20 h-60 w-60 rounded-full bg-thunder/5" />
-        <div className="absolute top-1/2 -right-10 h-32 w-32 rounded-full bg-gradient-to-bl from-honey/8 to-transparent" />
-        <div className="absolute top-3/4 -left-16 h-48 w-48 rounded-full bg-gradient-to-tr from-thunder/8 to-transparent" />
+        <div className="bg-honey/5 absolute -left-20 top-1/4 h-40 w-40 rounded-full" />
+        <div className="bg-thunder/5 absolute -right-20 bottom-1/4 h-60 w-60 rounded-full" />
+        <div className="from-honey/8 absolute -right-10 top-1/2 h-32 w-32 rounded-full bg-gradient-to-bl to-transparent" />
+        <div className="from-thunder/8 absolute -left-16 top-3/4 h-48 w-48 rounded-full bg-gradient-to-tr to-transparent" />
       </div>
 
       {/* Animated Bees */}
@@ -72,7 +73,7 @@ export default function TimelineSection() {
 
       <MotionComponent
         type="div"
-        className="absolute top-1/3 right-8 hidden lg:block"
+        className="absolute right-8 top-1/3 hidden lg:block"
         aria-hidden="true"
         animate={{
           y: [0, -20, 8, 0],
@@ -102,7 +103,7 @@ export default function TimelineSection() {
         >
           <MotionComponent
             type="div"
-            className="mb-4 inline-block rounded-full bg-thunder/10 px-6 py-2"
+            className="bg-thunder/10 mb-4 inline-block rounded-full px-6 py-2"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -110,7 +111,7 @@ export default function TimelineSection() {
           >
             <span className="text-sm font-semibold text-thunder">My Journey</span>
           </MotionComponent>
-          
+
           <h2 className="mb-6 text-5xl font-bold text-thunder">
             Experience &
             <MotionComponent
@@ -124,7 +125,7 @@ export default function TimelineSection() {
               Growth
             </MotionComponent>
           </h2>
-          
+
           <MotionComponent
             type="p"
             className="mx-auto max-w-2xl text-lg text-neutral-600"
@@ -133,26 +134,22 @@ export default function TimelineSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            Here's my journey through education, professional experience, and achievements 
-            that have shaped me as a developer.
+            Here's my journey through education, professional experience, and achievements that have
+            shaped me as a developer.
           </MotionComponent>
         </MotionComponent>
 
         {/* Timeline */}
         <div className="relative">
           {timelineData.map((item, index) => (
-            <TimelineItem
-              key={index}
-              {...item}
-              isLast={index === timelineData.length - 1}
-            />
+            <TimelineItem key={index} {...item} isLast={index === timelineData.length - 1} />
           ))}
         </div>
 
         {/* CV Download Section */}
         <MotionComponent
           type="div"
-          className="mt-16 rounded-2xl bg-gradient-to-br from-honey/10 to-thunder/5 p-8 text-center"
+          className="from-honey/10 to-thunder/5 mt-16 rounded-2xl bg-gradient-to-br p-8 text-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -168,39 +165,48 @@ export default function TimelineSection() {
           >
             <span className="text-4xl">📄</span>
           </MotionComponent>
-          
-          <h3 className="mb-3 text-2xl font-bold text-thunder">
-            Want the Full Story?
-          </h3>
-          
+
+          <h3 className="mb-3 text-2xl font-bold text-thunder">Want the Full Story?</h3>
+
           <p className="mb-6 text-neutral-600">
-            Download my complete CV for detailed information about my experience, 
-            skills, and achievements.
+            Download my complete CV for detailed information about my experience, skills, and
+            achievements.
           </p>
-          
-          <MotionComponent
-            type="div"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
+
+          <MotionComponent type="div" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <div
               onClick={() => {
-                // You can replace this with actual CV download logic
                 const link = document.createElement('a');
-                link.href = '/cv/ryne-dev-cv.pdf'; // Add your CV file to public/cv/
-                link.download = 'Ryne-Dev-CV.pdf';
+                link.href = '/cv/ryne-dev-cv.pdf';
+                link.download = 'ryne-dev-cv.pdf';
                 link.click();
               }}
               className="cursor-pointer"
             >
-              <div className="relative text-base inline-block">
-                <div className="bg-honey absolute inset-x-0 h-full rounded-lg" />
-                <div className="bg-thunder relative -translate-y-0 transform rounded-lg px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1 flex items-center gap-2">
+              <div className="relative inline-block text-base">
+                <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
+                <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
                   <span>📥</span>
                   Download CV
                 </div>
               </div>
             </div>
+          </MotionComponent>
+
+          <MotionComponent
+            type="div"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-6"
+          >
+            <Link href="https://github.com/nicoryne" target="_blank" rel="noopener noreferrer">
+              <div className="relative inline-block text-base">
+                <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
+                <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
+                  View GitHub Profile
+                </div>
+              </div>
+            </Link>
           </MotionComponent>
         </MotionComponent>
       </div>
