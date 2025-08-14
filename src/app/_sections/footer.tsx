@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function FooterSection() {
   return (
     <footer className="fixed inset-0 z-0 h-screen w-screen overflow-hidden bg-honey">
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-thunder">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 pt-16 text-thunder">
         {/* Main Brand Text */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 font-garet text-6xl font-black tracking-tight md:text-8xl lg:text-9xl">

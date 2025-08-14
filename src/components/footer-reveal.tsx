@@ -41,7 +41,7 @@ export default function FooterReveal({ children, footer }: FooterRevealProps) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative w-screen overflow-hidden">
       <div className="fixed inset-0 z-0">{footer}</div>
 
       <div ref={contentRef} className="relative z-10 bg-background">

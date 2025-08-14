@@ -2,8 +2,6 @@ import { metadata } from './metadata';
 import { fredoka, garet } from '@/lib/fonts';
 import './globals.css';
 import { ReactLenis } from '@/lib/lenis';
-import FooterReveal from '@/components/footer-reveal';
-import FooterSection from './_sections/footer';
 
 export { metadata };
 
