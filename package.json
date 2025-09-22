@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "aws s3 sync ./out s3://rynedev --delete && aws cloudfront create-invalidation --distribution E3S0H1SW02RYB6 --paths '/*'"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
