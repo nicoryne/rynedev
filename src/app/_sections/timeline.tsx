@@ -208,6 +208,26 @@ export default function TimelineSection() {
               </div>
             </Link>
           </MotionComponent>
+
+          <MotionComponent
+            type="div"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-6"
+          >
+            <Link
+              href="https://www.linkedin.com/in/nicolo-porter-4418b4218/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="relative inline-block text-base">
+                <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
+                <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
+                  View LinkedIn Profile
+                </div>
+              </div>
+            </Link>
+          </MotionComponent>
         </MotionComponent>
       </div>
     </section>
