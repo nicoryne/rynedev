@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
@@ -23,6 +23,12 @@ export default function TimelineCard({
   skills = []
 }: TimelineCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsExpanded(true);
+    }
+  }, []);
 
   return (
     <motion.div

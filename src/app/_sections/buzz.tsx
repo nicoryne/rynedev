@@ -16,12 +16,18 @@ export default function BuzzIntro() {
     >
       <div className="absolute -z-20 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-      <div className="mx-auto flex h-full flex-col items-center justify-evenly gap-16 p-8 xl:w-[1100px]">
-        <div className="flex w-full flex-col gap-6 text-center">
-          <h2 id="buzz-heading" className="text-4xl font-semibold md:text-5xl">
-            Let’s <span className="text-honey">Buzz</span> Around!
+      <div className="mx-auto flex h-full flex-col items-center justify-center gap-12 p-8 md:flex-row md:justify-between md:gap-16 xl:w-[1100px]">
+        {/* Left Side: Title */}
+        <div className="flex w-full flex-col gap-6 text-center md:w-1/2 md:text-left">
+          <h2 id="buzz-heading" className="text-4xl font-semibold leading-tight md:text-6xl lg:text-7xl">
+            Let’s <br className="hidden md:block" />
+            <span className="text-honey">Buzz</span> Around!
           </h2>
-          <p className="mx-auto max-w-96 text-justify text-lg text-neutral-500 md:text-2xl">
+        </div>
+
+        {/* Right Side: Paragraph */}
+        <div className="flex w-full items-center md:w-1/2">
+          <p className="mx-auto max-w-lg text-justify text-lg leading-relaxed text-neutral-500 md:text-2xl">
             Every task is a canvas to innovate, push boundaries, and ensure that my work reflects my
             best. Just like a bee buzzing with purpose, I strive to do my duties and do them well.
             From the initial project mockup to the final deployment or revision, I am dedicated to

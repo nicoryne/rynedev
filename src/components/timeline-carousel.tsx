@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import TimelineCard, { TimelineCardProps } from './timeline-card';
 import MotionComponent from './motion-component';
@@ -19,21 +19,6 @@ export default function TimelineCarousel({
   accentColor = 'honey'
 }: TimelineCarouselProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [dragConstraint, setDragConstraint] = useState(0);
-
-  useEffect(() => {
-    const updateConstraints = () => {
-      if (carouselRef.current) {
-        const scrollWidth = carouselRef.current.scrollWidth;
-        const clientWidth = carouselRef.current.clientWidth;
-        setDragConstraint(Math.min(0, -(scrollWidth - clientWidth)));
-      }
-    };
-
-    updateConstraints();
-    window.addEventListener('resize', updateConstraints);
-    return () => window.removeEventListener('resize', updateConstraints);
-  }, [items]);
 
   const bgClass = accentColor === 'honey' ? 'bg-honey' : 'bg-thunder';
   const textClass = accentColor === 'honey' ? 'text-thunder' : 'text-white';
@@ -76,14 +61,15 @@ export default function TimelineCarousel({
           </p>
         </MotionComponent>
 
-        {/* Carousel */}
-        <div className="min-w-0 flex-1 overflow-hidden w-max" ref={carouselRef}>
+        {/* Carousel constraint wrapper */}
+        <div className="min-w-0 flex-1 overflow-hidden" ref={carouselRef}>
           <motion.div
-            className="flex gap-4 py-2"
+            className="flex w-max cursor-grab gap-4 py-2 active:cursor-grabbing pr-8"
             drag="x"
-            dragConstraints={{ right: 0, left: dragConstraint }}
+            dragConstraints={carouselRef}
             dragElastic={0.1}
             dragMomentum
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
           >
             {sortedItems.map((item, index) => (
               <MotionComponent
