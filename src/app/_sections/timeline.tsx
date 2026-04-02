@@ -1,13 +1,22 @@
 'use client';
 
+import { useMemo } from 'react';
 import MotionComponent from '@/components/motion-component';
-import TimelineItem from '@/components/timeline-item';
-import Button3D from '@/components/button-3d';
+import TimelineCarousel from '@/components/timeline-carousel';
+import TimelineCard from '@/components/timeline-card';
 import Image from 'next/image';
-import { timelineData } from '@/lib/timeline-data';
 import Link from 'next/link';
+import { timelineData } from '@/lib/timeline-data';
 
 export default function TimelineSection() {
+  const groups = useMemo(() => {
+    const experience = timelineData.filter((d) => d.type === 'experience');
+    const education = timelineData.filter((d) => d.type === 'education');
+    const certifications = timelineData.filter((d) => d.type === 'certification');
+    const awards = timelineData.filter((d) => d.type === 'award');
+    return { experience, education, certifications, awards };
+  }, []);
+
   return (
     <section
       id="timeline"
@@ -91,7 +100,7 @@ export default function TimelineSection() {
         />
       </MotionComponent>
 
-      <div className="relative mx-auto max-w-4xl px-8">
+      <div className="relative mx-auto max-w-6xl px-8">
         {/* Header */}
         <MotionComponent
           type="header"
@@ -139,33 +148,71 @@ export default function TimelineSection() {
           </MotionComponent>
         </MotionComponent>
 
-        {/* Timeline */}
-        <div className="relative">
-          {timelineData.map((item, index) => (
-            <TimelineItem key={index} {...item} isLast={index === timelineData.length - 1} />
-          ))}
-        </div>
+        {/* Experience Carousel */}
+        <TimelineCarousel
+          title="Experience"
+          subtitle="Professional roles & internships"
+          items={groups.experience}
+          accentColor="honey"
+        />
+
+        {/* Education — Standalone Card */}
+        {groups.education.length > 0 && (
+          <MotionComponent
+            type="div"
+            className="mb-12"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
+              <MotionComponent
+                type="div"
+                className="flex shrink-0 flex-col justify-center rounded-2xl bg-thunder p-8 lg:w-56"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold text-white">Education</h3>
+                <p className="mt-2 text-sm text-white opacity-70">Academic background</p>
+              </MotionComponent>
+
+              <div className="flex-1">
+                <div className="py-2">
+                  <TimelineCard {...groups.education[0]} />
+                </div>
+              </div>
+            </div>
+          </MotionComponent>
+        )}
+
+        {/* Certifications Carousel */}
+        <TimelineCarousel
+          title="Certifications"
+          subtitle="Professional credentials"
+          items={groups.certifications}
+          accentColor="honey"
+        />
+
+        {/* Awards Carousel */}
+        <TimelineCarousel
+          title="Awards"
+          subtitle="Recognitions & hackathons"
+          items={groups.awards}
+          accentColor="thunder"
+        />
 
         {/* CV Download Section */}
         <MotionComponent
           type="div"
-          className="from-honey/10 to-thunder/5 mt-16 rounded-2xl bg-gradient-to-br p-8 text-center"
+          className="mt-16 rounded-2xl border border-neutral-200 bg-white/80 p-8 text-center shadow-sm backdrop-blur-sm"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
-          <MotionComponent
-            type="div"
-            className="mb-4"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-4xl">📄</span>
-          </MotionComponent>
-
           <h3 className="mb-3 text-2xl font-bold text-thunder">Want the Full Story?</h3>
 
           <p className="mb-6 text-neutral-600">
@@ -173,61 +220,52 @@ export default function TimelineSection() {
             achievements.
           </p>
 
-          <MotionComponent type="div" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <div
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/cv/ryne-dev-cv.pdf';
-                link.download = 'ryne-dev-cv.pdf';
-                link.click();
-              }}
-              className="cursor-pointer"
-            >
-              <div className="relative inline-block text-base">
-                <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
-                <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
-                  <span>📥</span>
-                  Download CV
+          <div className="flex flex-wrap justify-center gap-4">
+            <MotionComponent type="div" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <div
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/cv/ryne-dev-cv.pdf';
+                  link.download = 'ryne-dev-cv.pdf';
+                  link.click();
+                }}
+                className="cursor-pointer"
+              >
+                <div className="relative inline-block text-base">
+                  <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
+                  <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
+                    Download CV
+                  </div>
                 </div>
               </div>
-            </div>
-          </MotionComponent>
+            </MotionComponent>
 
-          <MotionComponent
-            type="div"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-6"
-          >
-            <Link href="https://github.com/nicoryne" target="_blank" rel="noopener noreferrer">
-              <div className="relative inline-block text-base">
-                <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
-                <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
-                  View GitHub Profile
+            <MotionComponent type="div" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link href="https://github.com/nicoryne" target="_blank" rel="noopener noreferrer">
+                <div className="relative inline-block text-base">
+                  <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
+                  <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
+                    View GitHub
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </MotionComponent>
+              </Link>
+            </MotionComponent>
 
-          <MotionComponent
-            type="div"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-6"
-          >
-            <Link
-              href="https://www.linkedin.com/in/nicolo-porter-4418b4218/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="relative inline-block text-base">
-                <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
-                <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
-                  View LinkedIn Profile
+            <MotionComponent type="div" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="https://www.linkedin.com/in/nicolo-porter-4418b4218/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="relative inline-block text-base">
+                  <div className="absolute inset-x-0 h-full rounded-lg bg-honey" />
+                  <div className="relative flex -translate-y-0 transform items-center gap-2 rounded-lg bg-thunder px-8 py-3 text-white transition duration-300 hover:-translate-x-2 hover:translate-y-1">
+                    View LinkedIn
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </MotionComponent>
+              </Link>
+            </MotionComponent>
+          </div>
         </MotionComponent>
       </div>
     </section>

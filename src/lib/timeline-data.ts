@@ -1,7 +1,51 @@
-import { TimelineItemProps } from '@/components/timeline-item';
+import { TimelineCardProps } from '@/components/timeline-card';
 
-export const timelineData: TimelineItemProps[] = [
+export const timelineData: TimelineCardProps[] = [
   // Experience
+   {
+    type: 'experience',
+    title: 'ServiceNow Intern',
+    organization: 'EY GDS',
+    date: 'Feb 2026 - Present',
+    location: 'Cebu, Philippines',
+    description:
+      'Part of the pilot batch of ServiceNow interns in EY GDS Philippines in partnership with Cebu Institute of Technology - University, gaining hands-on experience with the Now Platform, application development, and workflow automation to solve real-world business challenges.',
+    skills: [
+      'ServiceNow',
+      'Now Platform',
+      'Workflow Automation',
+      'Application Development',
+      'Problem Solving',
+      'AI Orchestration'
+    ]
+  },
+   {
+    type: 'experience',
+    title: 'Cloud Engineering Intern',
+    organization: 'Help.NGO',
+    date: 'Nov 2025 - Feb 2026',
+    location: 'Remote',
+    description:
+      'Cloud Engineering Intern specializing in AWS solution development, automation, and cloud infrastructure optimization for scalable and secure deployments.',
+    skills: ['EC2', 'S3', 'Lambda', 'IAM', 'CloudWatch', 'Technical Documentation']
+  },
+  {
+    type: 'experience',
+    title: 'CEL Website Head',
+    organization: 'CESAFI Esports League',
+    date: 'Jan 2026 - Present',
+    location: 'Cebu, Philippines',
+    description:
+      'Led the full revamp of the official CEL website, focusing on integrating real-time data for production. Added interactive features such as dynamic player profiles, comprehensive team statistics, and live match updates.',
+    skills: [
+      'Website Management',
+      'Content Updates',
+      'User Engagement',
+      'Data Integration',
+      'SEO',
+      'Project Management'
+    ]
+  },
   {
     type: 'experience',
     title: 'CESAFI Esports League Production Head',
@@ -18,6 +62,23 @@ export const timelineData: TimelineItemProps[] = [
       'Communication'
     ]
   },
+    {
+    type: 'experience',
+    title: 'CESAFI Website Head',
+    organization: 'Cebu Schools Athletics Foundation, Inc.',
+    date: 'Aug 2025 - Dec 2025',
+    location: 'Cebu, Philippines',
+    description:
+      'Managing the official CESAFI website, ensuring up-to-date content, user engagement, and seamless integration with live event data and schedules.',
+    skills: [
+      'Website Management',
+      'Content Updates',
+      'User Engagement',
+      'Data Integration',
+      'SEO',
+      'Project Management'
+    ]
+  },
   {
     type: 'experience',
     title: 'Full Stack Developer',
@@ -27,26 +88,6 @@ export const timelineData: TimelineItemProps[] = [
     description:
       'Developing modern web applications for various clients including healthcare, education, and entertainment industries. Specializing in React, Next.js, and Node.js solutions.',
     skills: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS']
-  },
-  {
-    type: 'experience',
-    title: 'CESAFI Website Head',
-    organization: 'Cebu Schools Athletics Foundation, Inc.',
-    date: 'Aug 2025 - Present',
-    location: 'Cebu, Philippines',
-    description:
-      'Managing the official CESAFI website, ensuring up-to-date content, user engagement, and seamless integration with live event data and schedules.',
-    skills: ['Website Management', 'Content Updates', 'User Engagement', 'Data Integration', 'SEO']
-  },
-  {
-    type: 'experience',
-    title: 'Cloud Engineering Intern',
-    organization: 'Help.NGO',
-    date: 'Nov 2025 - Present',
-    location: 'Cebu, Philippines',
-    description:
-      'Cloud Engineering Intern specializing in AWS solution development, automation, and cloud infrastructure optimization for scalable and secure deployments.',
-    skills: ['EC2', 'S3', 'Lambda', 'IAM', 'CloudWatch', 'Technical Documentation']
   },
 
   // Education
@@ -74,7 +115,23 @@ export const timelineData: TimelineItemProps[] = [
   // Certifications
   {
     type: 'certification',
-    title: 'Level 3 TOPCIT (Test of Practical Competency in ICT)',
+    title: 'Level 3 of 12th TOPCIT (Test of Practical Competency in ICT)',
+    organization:
+      '정보통신기획평가원 (Korea Information and Communication Technology Planning and Evaluation Agency)',
+    date: 'May 2025',
+    description:
+      'Certification exam that demonstrates a high level of practical competency in various ICT fields.',
+    skills: [
+      'Software Development',
+      'Database Management and Design',
+      'Network and Information Security',
+      'Project Management',
+      'Problem-Solving and Critical Thinking'
+    ]
+  },
+  {
+    type: 'certification',
+    title: 'Level 3 of 13th TOPCIT (Test of Practical Competency in ICT)',
     organization:
       '정보통신기획평가원 (Korea Information and Communication Technology Planning and Evaluation Agency)',
     date: 'May 2025',
@@ -109,7 +166,7 @@ export const timelineData: TimelineItemProps[] = [
     organization: 'AWS Academy Graduate - Accredited by Amazon Web Services (AWS)',
     date: 'Sep 2025',
     description:
-      'Certification that validates foundational knowledge of cloud computing and AWS services.',
+      'Certification validating foundational knowledge of cloud computing principles, core AWS services, and basic cloud security concepts.',
     skills: [
       'Cloud Computing Concepts',
       'AWS Core Services',
@@ -117,6 +174,45 @@ export const timelineData: TimelineItemProps[] = [
       'Cloud Architecture Best Practices',
       'Cost Management'
     ]
+  },
+  {
+    type: 'certification',
+    title: 'AWS Academy Cloud Architecting',
+    organization: 'AWS Academy Graduate - Accredited by Amazon Web Services (AWS)',
+    date: 'Nov 2025',
+    description:
+      'Certification validating advanced knowledge of cloud architecture design and AWS services for building scalable, highly-available, and secure applications.',
+    skills: [
+      'Cloud Architecture Design',
+      'AWS Services for Architecture',
+      'Scalability and High Availability',
+      'Security Best Practices',
+      'Cost Optimization'
+    ]
+  },
+  {
+    type: 'certification',
+    title: 'AWS Partner Accreditation - Technical',
+    organization: 'AWS Partner Network (APN) - Accredited by Amazon Web Services (AWS)',
+    date: 'Nov 2025',
+    description:
+      'Certification validating technical proficiency in AWS services and solutions, demonstrating the ability to securely design, deploy, and manage applications on AWS.',
+    skills: [
+      'AWS Services Proficiency',
+      'Cloud Solution Design',
+      'Deployment and Management on AWS',
+      'Security Best Practices',
+      'Troubleshooting and Optimization'
+    ]
+  },
+  {
+    type: 'certification',
+    title: 'AWS Partner Accreditation - Sales',
+    organization: 'AWS Partner Network (APN) - Accredited by Amazon Web Services (AWS)',
+    date: 'Nov 2025',
+    description:
+      'Certification validating sales proficiency in AWS services and solutions, demonstrating the ability to effectively communicate and implement AWS offerings to clients.',
+    skills: ['AWS Services Knowledge', 'Cloud Solution Selling', 'Customer Engagement']
   },
 
   // Awards

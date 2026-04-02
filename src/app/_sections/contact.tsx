@@ -36,7 +36,7 @@ export default function ContactSection() {
               {defaultSocials.map((social, index) => (
                 <li key={index} className="list-none">
                   <Link
-                    className="focus:ring-primary block rounded-md border p-4 focus:ring-2 focus:ring-offset-2"
+                    className="focus:ring-honey block rounded-md border border-gray-300 p-4 focus:ring-2 focus:ring-offset-2"
                     href={social.href}
                     aria-label={`Visit my ${social.text} profile`}
                     target="_blank"

@@ -8,8 +8,8 @@ export default function AboutSection() {
     <section id="about" className="relative flex min-h-screen w-full items-center py-16 sm:py-24">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -z-20 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-        <div className="from-honey/8 absolute -right-32 top-20 h-64 w-64 rounded-full bg-gradient-to-bl to-transparent" />
+        <div className="absolute -z-20 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+        <div className="from-honey/8 absolute -right-32 top-20 h-64 w-64 rounded-full bg-linear-to-bl to-transparent" />
         <div className="from-thunder/8 absolute -left-24 bottom-32 h-48 w-48 rounded-full bg-gradient-to-tr to-transparent" />
         <div className="from-honey/5 absolute left-1/4 top-1/2 h-32 w-32 rounded-full bg-gradient-to-br to-transparent" />
       </div>

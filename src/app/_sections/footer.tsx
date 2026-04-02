@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 export default function FooterSection() {
   return (
-    <footer className="fixed inset-0 z-0 h-screen w-screen overflow-hidden bg-honey">
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 pt-16 text-thunder">
+    <footer className="bg-honey fixed inset-0 z-0 h-screen w-screen overflow-hidden">
+      <div className="text-thunder absolute inset-0 flex flex-col items-center justify-center px-8 pt-16">
         {/* Main Brand Text */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 font-garet text-6xl font-black tracking-tight md:text-8xl lg:text-9xl">
+          <h2 className="font-garet mb-4 text-6xl font-black tracking-tight md:text-8xl lg:text-9xl">
             RYNE.DEV
           </h2>
           <p className="text-xl font-medium opacity-80 md:text-2xl">Crafting Digital Experiences</p>
@@ -88,10 +88,10 @@ export default function FooterSection() {
         </div>
 
         {/* Decorative Elements */}
-        <div className="bg-thunder/20 absolute left-1/4 top-1/4 h-2 w-2 animate-pulse rounded-full"></div>
-        <div className="bg-thunder/15 absolute right-1/3 top-1/3 h-3 w-3 animate-pulse rounded-full delay-1000"></div>
+        <div className="bg-thunder/20 absolute top-1/4 left-1/4 h-2 w-2 animate-pulse rounded-full"></div>
+        <div className="bg-thunder/15 absolute top-1/3 right-1/3 h-3 w-3 animate-pulse rounded-full delay-1000"></div>
         <div className="bg-thunder/25 absolute bottom-1/4 left-1/3 h-1 w-1 animate-pulse rounded-full delay-500"></div>
-        <div className="bg-thunder/10 delay-1500 absolute bottom-1/3 right-1/4 h-2 w-2 animate-pulse rounded-full"></div>
+        <div className="bg-thunder/10 absolute right-1/4 bottom-1/3 h-2 w-2 animate-pulse rounded-full delay-1500"></div>
       </div>
     </footer>
   );

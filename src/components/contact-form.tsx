@@ -85,7 +85,7 @@ export default function ContactForm() {
               id="name"
               name="name"
               placeholder="Ryne"
-              className="ease focus:border-honey ring-honey outline-honey rounded-md border p-3 text-sm transition-colors duration-200"
+              className="ease focus:border-honey ring-honey outline-honey rounded-md border border-gray-300 p-3 text-sm transition-colors duration-200"
               autoComplete="given-name"
               value={info.name}
               onChange={(e) => updateInfo('name', e.target.value)}
@@ -102,7 +102,7 @@ export default function ContactForm() {
               id="email"
               name="email"
               placeholder="rynedev.ph@gmail.com"
-              className="ease focus:border-honey ring-honey outline-honey rounded-md border p-3 text-sm transition-colors duration-200"
+              className="ease focus:border-honey ring-honey outline-honey rounded-md border border-gray-300 p-3 text-sm transition-colors duration-200"
               autoComplete="email"
               value={info.email}
               onChange={(e) => updateInfo('email', e.target.value)}
@@ -119,7 +119,7 @@ export default function ContactForm() {
               id="message"
               name="message"
               placeholder="Hello! I am writing about.."
-              className="focus:border-honey ring-honey outline-honey resize-none rounded-md border p-4 text-sm transition-all duration-200 ease-linear"
+              className="focus:border-honey ring-honey outline-honey resize-none rounded-md border border-gray-300 p-4 text-sm transition-all duration-200 ease-linear"
               value={info.message}
               onChange={(e) => updateInfo('message', e.target.value)}
             />
