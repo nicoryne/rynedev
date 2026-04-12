@@ -2,7 +2,7 @@ import { TimelineCardProps } from '@/components/timeline-card';
 
 export const timelineData: TimelineCardProps[] = [
   // Experience
-   {
+  {
     type: 'experience',
     title: 'ServiceNow Intern',
     organization: 'EY GDS',
@@ -19,7 +19,7 @@ export const timelineData: TimelineCardProps[] = [
       'AI Orchestration'
     ]
   },
-   {
+  {
     type: 'experience',
     title: 'Cloud Engineering Intern',
     organization: 'Help.NGO',
@@ -48,8 +48,8 @@ export const timelineData: TimelineCardProps[] = [
   },
   {
     type: 'experience',
-    title: 'CESAFI Esports League Production Head',
-    organization: 'Cebu Schools Athletics Foundation, Inc.',
+    title: 'CEL Production Head',
+    organization: 'CESAFI Esports League',
     date: 'Oct 2023 - Apr 2025',
     location: 'Cebu, Philippines',
     description:
@@ -62,7 +62,7 @@ export const timelineData: TimelineCardProps[] = [
       'Communication'
     ]
   },
-    {
+  {
     type: 'experience',
     title: 'CESAFI Website Head',
     organization: 'Cebu Schools Athletics Foundation, Inc.',
@@ -134,7 +134,7 @@ export const timelineData: TimelineCardProps[] = [
     title: 'Level 3 of 13th TOPCIT (Test of Practical Competency in ICT)',
     organization:
       '정보통신기획평가원 (Korea Information and Communication Technology Planning and Evaluation Agency)',
-    date: 'May 2025',
+    date: 'Oct 2025',
     description:
       'Certification exam that demonstrates a high level of practical competency in various ICT fields.',
     skills: [
@@ -203,6 +203,21 @@ export const timelineData: TimelineCardProps[] = [
       'Deployment and Management on AWS',
       'Security Best Practices',
       'Troubleshooting and Optimization'
+    ]
+  },
+  {
+    type: 'certification',
+    title: 'ServiceNow Certified System Administrator',
+    organization: 'ServiceNow in partnership with EY GDS Philippines',
+    date: 'Apr 2026',
+    description:
+      'Certification validating the ability to effectively manage and administer ServiceNow instances.',
+    skills: [
+      'ServiceNow Platform',
+      'System Administration',
+      'User Management',
+      'Configuration and Customization',
+      'Troubleshooting'
     ]
   },
   {
