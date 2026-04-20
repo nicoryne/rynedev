@@ -222,6 +222,36 @@ export const timelineData: TimelineCardProps[] = [
   },
   {
     type: 'certification',
+    title: 'ServiceNow Certified System Administrator',
+    organization: 'ServiceNow in partnership with EY GDS Philippines',
+    date: 'Apr 2026',
+    description:
+      'Certification validating the ability to effectively manage and administer ServiceNow instances.',
+    skills: [
+      'ServiceNow Platform',
+      'System Administration',
+      'User Management',
+      'Configuration and Customization',
+      'Troubleshooting'
+    ]
+  },
+  {
+    type: 'certification',
+    title: 'ServiceNow Certified Application Developer',
+    organization: 'ServiceNow in partnership with EY GDS Philippines',
+    date: 'Apr 2026',
+    description:
+      'Certification validating the ability to design and develop applications on the ServiceNow platform.',
+    skills: [
+      'ServiceNow Platform',
+      'Application Development',
+      'Workflow Automation',
+      'User Interface Design',
+      'Problem-Solving'
+    ]
+  },
+  {
+    type: 'certification',
     title: 'AWS Partner Accreditation - Sales',
     organization: 'AWS Partner Network (APN) - Accredited by Amazon Web Services (AWS)',
     date: 'Nov 2025',
