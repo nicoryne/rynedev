@@ -16,7 +16,7 @@ export default function Home() {
 
       <FooterReveal
         children={
-          <main className="mx-auto pt-8">
+          <main className="mx-auto pt-12">
             {/* Hero */}
             <HeroSection />
 

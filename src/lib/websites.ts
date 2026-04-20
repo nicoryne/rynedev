@@ -6,11 +6,42 @@ export interface ExtendedWebsiteProps extends WebsiteCardProps {
 
 export const websites: ExtendedWebsiteProps[] = [
   {
+    imageUrl: '/img/wbs-cel.webp',
+    title: 'CESAFI Esports League',
+    description:
+      'View real-time esports schedule, standings, and statistics from the biggest esports league in Cebu.',
+    href: 'https://www.cesafiesportsleague.com/',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'PostgreSQL',
+      'React Query',
+      'Cache-Control',
+      'API Integration'
+    ]
+  },
+  {
     imageUrl: '/img/wbs-elixir.webp',
     title: 'The Elixir Skin Clinic - Talisay and Minglanilla, Cebu',
     description: 'Browse services catalog, book appointment, and manage your own client portal.',
     href: 'https://www.theelixiraesthetics.skin/',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'React Query']
+  },
+  {
+    imageUrl: '/img/wbs-eyntern-arena.webp',
+    title: 'EYntern Arena',
+    description:
+      'Gamified learning platform for my fellow interns to prepare for the CSA and CAD ServiceNow certification exams.',
+    href: 'https://www.eyntern-arena.ryne.dev/',
+    technologies: [
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'PostgreSQL',
+      'React Query',
+      'Cache-Control'
+    ]
   },
   {
     imageUrl: '/img/wbs-sole.webp',
@@ -34,14 +65,6 @@ export const websites: ExtendedWebsiteProps[] = [
       'A real-time data dashboard for Serial Kitten GFX, a major broadcasting company, used to send live data for their broadcasts.',
     href: 'https://www.serialkitten-dashboard.ryne.dev/',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'NoSQL']
-  },
-  {
-    imageUrl: '/img/wbs-cel.webp',
-    title: 'CESAFI Esports League',
-    description:
-      'View real-time esports schedule, standings, and statistics from the biggest esports league in Cebu.',
-    href: 'https://www.cesafiesportsleague.com/',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL']
   },
   {
     imageUrl: '/img/wbs-noted.webp',
