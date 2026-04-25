@@ -37,31 +37,34 @@ export default function TimelineCard({
       layout
       transition={{ layout: { duration: 0.3, ease: 'easeOut' } }}
     >
-      {/* Date badge */}
-      <span className="mb-3 inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-500">
-        {date}
-      </span>
+      {/* Unexpanded Content */}
+      <div className="flex h-44 flex-col">
+        <div>
+          {/* Date badge */}
+          <span className="mb-3 inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-500">
+            {date}
+          </span>
 
-      {/* Title */}
-      <h4 className="text-base font-bold text-thunder leading-snug">{title}</h4>
+          {/* Title */}
+          <h4 className="text-base font-bold leading-snug text-thunder">{title}</h4>
 
-      {/* Organization */}
-      <p className="mt-1 text-sm text-neutral-500">{organization}</p>
+          {/* Organization */}
+          <p className="mt-1 text-sm text-neutral-500">{organization}</p>
 
-      {/* Location */}
-      {location && (
-        <p className="mt-0.5 text-xs text-neutral-400">{location}</p>
-      )}
+          {/* Location */}
+          {location && <p className="mt-0.5 text-xs text-neutral-400">{location}</p>}
+        </div>
 
-      {/* Press indicator */}
-      <motion.div
-        className="mt-3 flex items-center gap-1 text-xs text-neutral-400"
-        animate={{ opacity: isExpanded ? 0 : 1 }}
-        transition={{ duration: 0.2 }}
-      >
-        <ChevronDownIcon className="h-3.5 w-3.5" />
-        <span>Tap for details</span>
-      </motion.div>
+        {/* Press indicator */}
+        <motion.div
+          className="mt-auto flex items-center gap-1 text-xs text-neutral-400"
+          animate={{ opacity: isExpanded ? 0 : 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          <ChevronDownIcon className="h-3.5 w-3.5" />
+          <span>Tap for details</span>
+        </motion.div>
+      </div>
 
       {/* Expandable content */}
       <AnimatePresence>

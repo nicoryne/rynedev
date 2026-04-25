@@ -33,7 +33,7 @@ export const websites: ExtendedWebsiteProps[] = [
     title: 'EYntern Arena',
     description:
       'Gamified learning platform for my fellow interns to prepare for the CSA and CAD ServiceNow certification exams.',
-    href: 'https://www.eyntern-arena.ryne.dev/',
+    href: 'https://eyntern-arena.ryne.dev/',
     technologies: [
       'Next.js',
       'TypeScript',
@@ -48,7 +48,7 @@ export const websites: ExtendedWebsiteProps[] = [
     title: 'Society of Language Enthusiasts (SOLE) University of San Carlos',
     description:
       'A management platform for the University of San Carlos Society of Language Enthusiasts (SOLE), where members can view CES activities, their points, and announcements.',
-    href: 'https://www.sole.ryne.dev/',
+    href: 'https://sole.ryne.dev/',
     technologies: [
       'Next.js',
       'TypeScript',
@@ -63,7 +63,7 @@ export const websites: ExtendedWebsiteProps[] = [
     title: 'Serial Kitten GFX Dashboard',
     description:
       'A real-time data dashboard for Serial Kitten GFX, a major broadcasting company, used to send live data for their broadcasts.',
-    href: 'https://www.serialkitten-dashboard.ryne.dev/',
+    href: 'https://serialkitten-dashboard.ryne.dev/',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'NoSQL']
   },
   {
