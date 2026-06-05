@@ -117,7 +117,7 @@ export const timelineData: TimelineCardProps[] = [
     type: 'certification',
     title: 'PhilNITS Fundamental Information Technology Engineer (FE)',
     organization:
-      'Japan Information Technology Engineers Examination Center (JITEC) - Accredited by the Ministry of Economy, Trade and Industry (METI) of Japan',
+      'The Philippine National Information Technology Standards Foundation, Inc. (PhilNITS)',
     date: 'May 2026',
     description:
       'Certification that validates fundamental knowledge and skills in information technology, including software development, database management, network security, and project management.',
