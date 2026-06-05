@@ -8,16 +8,16 @@ export default function AboutSection() {
     <section id="about" className="relative flex min-h-screen w-full items-center py-16 sm:py-24">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -z-20 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-        <div className="from-honey/8 absolute -right-32 top-20 h-64 w-64 rounded-full bg-linear-to-bl to-transparent" />
-        <div className="from-thunder/8 absolute -left-24 bottom-32 h-48 w-48 rounded-full bg-gradient-to-tr to-transparent" />
-        <div className="from-honey/5 absolute left-1/4 top-1/2 h-32 w-32 rounded-full bg-gradient-to-br to-transparent" />
+        <div className="absolute -z-20 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] [background-size:16px_16px]" />
+        <div className="from-honey/8 absolute top-20 -right-32 h-64 w-64 rounded-full bg-linear-to-bl to-transparent" />
+        <div className="from-thunder/8 absolute bottom-32 -left-24 h-48 w-48 rounded-full bg-gradient-to-tr to-transparent" />
+        <div className="from-honey/5 absolute top-1/2 left-1/4 h-32 w-32 rounded-full bg-gradient-to-br to-transparent" />
       </div>
 
       {/* Animated Bees */}
       <MotionComponent
         type="div"
-        className="absolute left-16 top-24 md:left-32 md:top-40"
+        className="absolute top-24 left-16 md:top-40 md:left-32"
         aria-hidden="true"
         animate={{
           y: [0, -22, 0, 18, 0],
@@ -37,7 +37,7 @@ export default function AboutSection() {
 
       <MotionComponent
         type="div"
-        className="absolute bottom-24 right-20 md:bottom-40 md:right-36"
+        className="absolute right-20 bottom-24 md:right-36 md:bottom-40"
         aria-hidden="true"
         animate={{
           y: [0, 16, -12, 0],
@@ -64,7 +64,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
-          <h1 className="text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl xl:text-5xl">
+          <h1 className="text-2xl leading-tight font-semibold sm:text-3xl lg:text-4xl xl:text-5xl">
             About Me – Web Developer & IT Student
           </h1>
           <p className="mx-auto max-w-2xl text-sm text-neutral-600 sm:text-base lg:text-lg">
@@ -102,15 +102,13 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <p className="text-left text-sm leading-relaxed sm:text-base lg:text-justify lg:text-lg xl:text-xl">
-              I'm a fourth-year IT student working towards my Bachelor's degree, with a passion for
-              web and mobile development. I'm a full-stack developer, specializing in front-end
-              development and user experience design, aiming to build accessible and
-              high-performance websites.
+              Hey there! I'm Ryne, a passionate developer looking to make a positive impact through
+              technology. I have a strong background in full-stack development, and technical
+              leadership. I'm always looking forward for new opportunities to learn and grow.
             </p>
 
             <p className="text-left text-sm leading-relaxed sm:text-base lg:text-justify lg:text-lg xl:text-xl">
-              If you're looking for a web developer for your next project or need help with your
-              business website, feel free to reach out!
+              If you're looking for a web developer for your next project feel free to reach out!
             </p>
 
             <address className="mt-2 flex items-center gap-3 not-italic sm:mt-4 sm:gap-4">
