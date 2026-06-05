@@ -6,7 +6,7 @@ export const timelineData: TimelineCardProps[] = [
     type: 'experience',
     title: 'ServiceNow Intern',
     organization: 'EY GDS',
-    date: 'Feb 2026 - Present',
+    date: 'Feb 2026 - April 2026',
     location: 'Cebu, Philippines',
     description:
       'Part of the pilot batch of ServiceNow interns in EY GDS Philippines in partnership with Cebu Institute of Technology - University, gaining hands-on experience with the Now Platform, application development, and workflow automation to solve real-world business challenges.',
@@ -95,10 +95,10 @@ export const timelineData: TimelineCardProps[] = [
     type: 'education',
     title: 'Bachelor of Science in Information Technology',
     organization: 'Cebu Institute of Technology - University',
-    date: 'Expected 2026',
+    date: 'May 2026',
     location: 'Cebu City, Philippines',
     description:
-      'Focused on information systems, web development, project management, and cybersecurity.',
+      'Focused on information systems, web development, project management, and cybersecurity. Graduated Cum Laude with a strong academic record and active involvement in tech-related extracurricular activities.',
     skills: [
       'Java',
       'C',
@@ -113,6 +113,22 @@ export const timelineData: TimelineCardProps[] = [
   },
 
   // Certifications
+  {
+    type: 'certification',
+    title: 'PhilNITS Fundamental Information Technology Engineer (FE)',
+    organization:
+      'Japan Information Technology Engineers Examination Center (JITEC) - Accredited by the Ministry of Economy, Trade and Industry (METI) of Japan',
+    date: 'May 2026',
+    description:
+      'Certification that validates fundamental knowledge and skills in information technology, including software development, database management, network security, and project management.',
+    skills: [
+      'Software Development',
+      'Database Management and Design',
+      'Network and Information Security',
+      'Project Management',
+      'Problem-Solving and Critical Thinking'
+    ]
+  },
   {
     type: 'certification',
     title: 'Level 3 of 12th TOPCIT (Test of Practical Competency in ICT)',
