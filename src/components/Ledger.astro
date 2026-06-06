@@ -1,0 +1,152 @@
+---
+import { projects } from '../data/projects';
+import { roles, certifications } from '../data/experience';
+---
+
+<section class="pb-16 section-enter" id="work">
+  <!-- Projects Ledger -->
+  <div class="mb-16 container mx-auto px-4 md:px-8">
+    <div class="py-8 pb-6 border-t border-border">
+      <span class="text-[0.72rem] tracking-[0.1em] uppercase font-mono text-accent">— SELECTED WORK</span>
+    </div>
+
+    <!-- Table header -->
+    <div class="hidden min-[900px]:grid grid-cols-[40px_1fr_200px_160px_24px] gap-4 px-3 py-3 border-b border-text text-[0.65rem] tracking-[0.08em] uppercase text-text-muted font-mono">
+      <span>Nº</span>
+      <span>Project</span>
+      <span>Stack</span>
+      <span>Year</span>
+      <span></span>
+    </div>
+
+    <!-- Project rows -->
+    {projects.map((project) => (
+      <a href={project.href} target="_blank" rel="noopener noreferrer" class="group flex flex-col min-[900px]:grid min-[900px]:grid-cols-[40px_1fr_200px_160px_24px] gap-[0.4rem] min-[900px]:gap-4 px-1 min-[900px]:px-3 py-5 min-[900px]:py-4 border-b border-dashed border-border-light min-[900px]:items-start text-inherit transition-colors duration-200 border-l-2 border-transparent cursor-pointer min-[900px]:hover:bg-accent-dim min-[900px]:hover:border-l-accent project-row" id={`project-${project.num}`} data-image={project.image} data-desc={project.longDescription || project.description}>
+        <span class="text-[0.65rem] min-[900px]:text-[0.75rem] pt-[2px] font-mono text-text-muted">{project.num}</span>
+        <span class="flex flex-col gap-1 min-[900px]:gap-[0.3rem]">
+          <span class="text-[0.9rem] min-[900px]:text-[0.95rem] font-medium leading-[1.3]">{project.title}</span>
+          <span class="text-[0.78rem] leading-[1.45] line-clamp-2 text-text-muted hidden min-[900px]:-webkit-box">{project.description}</span>
+        </span>
+        <span class="text-[0.7rem] min-[900px]:text-[0.75rem] text-text-muted pt-[2px] font-mono after:content-['·'] after:text-border after:ml-1 min-[900px]:after:hidden inline-block min-[900px]:inline">{project.stack}</span>
+        <span class="text-[0.7rem] min-[900px]:text-[0.75rem] text-text-muted pt-[2px] font-mono whitespace-nowrap">{project.year}</span>
+        <span class="hidden min-[900px]:block text-[0.9rem] pt-[1px] opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-accent">↗</span>
+      </a>
+    ))}
+  </div>
+
+  <!-- Hover Preview Container -->
+  <div id="hover-preview" class="fixed top-0 left-0 w-[320px] bg-bg border border-border-light rounded-lg p-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] pointer-events-none opacity-0 scale-95 transition-all duration-200 z-[100] flex flex-col gap-3 [&.is-visible]:opacity-100 [&.is-visible]:scale-100 max-[900px]:!hidden">
+    <img id="hover-preview-img" src="" alt="" class="w-full h-auto rounded-[4px] object-cover" />
+    <div id="hover-preview-desc" class="text-[0.8rem] leading-[1.4] px-1 pb-1 text-text-muted"></div>
+  </div>
+
+  <!-- Experience Ledger -->
+  <div class="mb-16 container mx-auto px-4 md:px-8" id="experience">
+    <div class="py-8 pb-6 border-t border-border">
+      <span class="text-[0.72rem] tracking-[0.1em] uppercase font-mono text-accent">— EXPERIENCE</span>
+    </div>
+
+    <div class="hidden min-[900px]:grid grid-cols-[40px_1fr_200px_160px_24px] gap-4 px-3 py-3 border-b border-text text-[0.65rem] tracking-[0.08em] uppercase text-text-muted font-mono">
+      <span>Nº</span>
+      <span>Role</span>
+      <span>Organization</span>
+      <span>Period</span>
+      <span></span>
+    </div>
+
+    {roles.map((role) => (
+      <div class="group flex flex-col min-[900px]:grid min-[900px]:grid-cols-[40px_1fr_200px_160px_24px] gap-[0.4rem] min-[900px]:gap-4 px-1 min-[900px]:px-3 py-5 min-[900px]:py-4 border-b border-dashed border-border-light min-[900px]:items-start text-inherit border-l-2 border-transparent cursor-default" id={`role-${role.num}`}>
+        <span class="text-[0.65rem] min-[900px]:text-[0.75rem] pt-[2px] font-mono text-text-muted">{role.num}</span>
+        <span class="flex flex-col gap-1 min-[900px]:gap-[0.3rem]">
+          <span class="text-[0.9rem] min-[900px]:text-[0.95rem] font-medium leading-[1.3]">{role.title}</span>
+        </span>
+        <span class="text-[0.7rem] min-[900px]:text-[0.75rem] text-text-muted pt-[2px] font-mono after:content-['·'] after:text-border after:ml-1 min-[900px]:after:hidden inline-block min-[900px]:inline">{role.org}</span>
+        <span class="text-[0.7rem] min-[900px]:text-[0.75rem] text-text-muted pt-[2px] font-mono whitespace-nowrap">{role.date}</span>
+        <span class="hidden min-[900px]:block"></span>
+      </div>
+    ))}
+  </div>
+
+  <!-- Certifications Ledger -->
+  <div class="container mx-auto px-4 md:px-8">
+    <div class="py-8 pb-6 border-t border-border">
+      <span class="text-[0.72rem] tracking-[0.1em] uppercase font-mono text-accent">— CERTIFICATIONS</span>
+    </div>
+
+    <div class="hidden min-[900px]:grid grid-cols-[40px_1fr_200px_160px_24px] gap-4 px-3 py-3 border-b border-text text-[0.65rem] tracking-[0.08em] uppercase text-text-muted font-mono">
+      <span>Nº</span>
+      <span>Certification</span>
+      <span>Issuer</span>
+      <span>Date</span>
+      <span></span>
+    </div>
+
+    {certifications.map((cert) => (
+      <div class="group flex flex-col min-[900px]:grid min-[900px]:grid-cols-[40px_1fr_200px_160px_24px] gap-[0.4rem] min-[900px]:gap-4 px-1 min-[900px]:px-3 py-5 min-[900px]:py-4 border-b border-dashed border-border-light min-[900px]:items-start text-inherit border-l-2 border-transparent cursor-default" id={`cert-${cert.num}`}>
+        <span class="text-[0.65rem] min-[900px]:text-[0.75rem] pt-[2px] font-mono text-text-muted">{cert.num}</span>
+        <span class="flex flex-col gap-1 min-[900px]:gap-[0.3rem]">
+          <span class="text-[0.9rem] min-[900px]:text-[0.95rem] font-medium leading-[1.3]">{cert.title}</span>
+        </span>
+        <span class="text-[0.7rem] min-[900px]:text-[0.75rem] text-text-muted pt-[2px] font-mono after:content-['·'] after:text-border after:ml-1 min-[900px]:after:hidden inline-block min-[900px]:inline">{cert.org}</span>
+        <span class="text-[0.7rem] min-[900px]:text-[0.75rem] text-text-muted pt-[2px] font-mono whitespace-nowrap">{cert.date}</span>
+        <span class="hidden min-[900px]:block"></span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  // Hover preview functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const rows = document.querySelectorAll('.project-row');
+    const preview = document.getElementById('hover-preview');
+    const previewImg = document.getElementById('hover-preview-img') as HTMLImageElement;
+    const previewDesc = document.getElementById('hover-preview-desc');
+
+    if (!preview || !previewImg || !previewDesc) return;
+
+    let isHovering = false;
+
+    rows.forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        const imageSrc = row.getAttribute('data-image');
+        const desc = row.getAttribute('data-desc');
+        
+        if (imageSrc && imageSrc !== 'undefined') {
+          previewImg.src = imageSrc;
+          previewDesc.textContent = desc;
+          isHovering = true;
+          preview.classList.add('is-visible');
+        }
+      });
+
+      row.addEventListener('mousemove', (e) => {
+        if (isHovering) {
+          const mouseEvent = e as MouseEvent;
+          let x = mouseEvent.clientX + 20;
+          let y = mouseEvent.clientY + 20;
+          
+          const previewRect = preview.getBoundingClientRect();
+          
+          // Prevent horizontal overflow
+          if (x + previewRect.width > window.innerWidth) {
+            x = mouseEvent.clientX - previewRect.width - 20;
+          }
+          
+          // Prevent vertical overflow
+          if (y + previewRect.height > window.innerHeight) {
+            y = mouseEvent.clientY - previewRect.height - 20;
+          }
+          
+          preview.style.left = `${x}px`;
+          preview.style.top = `${y}px`;
+        }
+      });
+
+      row.addEventListener('mouseleave', () => {
+        isHovering = false;
+        preview.classList.remove('is-visible');
+      });
+    });
+  });
+</script>

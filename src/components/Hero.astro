@@ -1,0 +1,84 @@
+---
+
+---
+
+<section class="container mx-auto px-4 md:px-8 pt-16 pb-12 md:pt-24 md:pb-16 section-enter" id="hero">
+  <div class="text-[0.7rem] tracking-[0.12em] uppercase mb-8 font-mono text-accent">A SOFTWARE ENGINEER, IN DETAIL</div>
+
+  <h1 class="text-[clamp(3.2rem,10vw,7rem)] leading-[0.92] mb-10 overflow-hidden" aria-label="Hey, I'm Ryne.">
+    <span class="inline-block animate-letterpress mr-[0.15em]" style="animation-delay: calc(0.15s + 0 * 0.12s)">Hey,</span>
+    <span class="inline-block animate-letterpress mr-[0.15em]" style="animation-delay: calc(0.15s + 1 * 0.12s)">I'm</span>
+    <span class="inline-block animate-letterpress mr-[0.15em] italic cursor-help transition-colors duration-300 hover:text-accent hero-name-trigger" style="animation-delay: calc(0.15s + 2 * 0.12s)">Ryne<span class="text-accent">.</span></span>
+  </h1>
+
+  <p class="max-w-[620px] text-[1.05rem] leading-[1.65] text-text mb-8 [&_strong]:font-semibold">
+    Full-stack developer and IT graduate from <strong>Cebu, Philippines</strong>.
+    I build high-performance web applications — from real-time esports platforms
+    to clinic management systems — with a focus on clean architecture and
+    purposeful design.
+  </p>
+
+  <div class="flex flex-col md:flex-row flex-wrap gap-1 md:gap-2 text-[0.72rem] tracking-[0.04em] font-mono text-text-muted mb-8">
+    <span>BS IT — CIT-University, 2026</span>
+    <span class="hidden md:inline text-border">·</span>
+    <span>ServiceNow &amp; AWS Certified</span>
+    <span class="hidden md:inline text-border">·</span>
+    <span>Cebu City</span>
+  </div>
+
+  <div class="mt-8">
+    <a href="/ryne-dev-cv.pdf" target="_blank" download="Ryne_Porter_CV.pdf" class="inline-flex items-center gap-2 font-mono text-[0.75rem] tracking-[0.15em] uppercase border border-accent text-accent px-6 py-3 hover:bg-accent hover:text-bg transition-colors duration-300">
+      Download CV
+      <span class="text-xs">↓</span>
+    </a>
+  </div>
+
+  <!-- Hero Hover Preview Container -->
+  <div id="hero-hover-preview" class="fixed top-0 left-0 w-[240px] md:w-[280px] bg-bg border border-border-light rounded-lg p-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] pointer-events-none opacity-0 scale-95 transition-all duration-200 z-[100] flex flex-col [&.is-visible]:opacity-100 [&.is-visible]:scale-100 max-[900px]:!hidden">
+    <img src="/img/nicolo-1.webp" alt="Nicolo Ryne" class="w-full h-auto rounded-[4px] object-cover" />
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.querySelector('.hero-name-trigger');
+    const preview = document.getElementById('hero-hover-preview');
+    
+    if (!trigger || !preview) return;
+
+    let isHovering = false;
+
+    trigger.addEventListener('mouseenter', () => {
+      isHovering = true;
+      preview.classList.add('is-visible');
+    });
+
+    trigger.addEventListener('mousemove', (e) => {
+      if (isHovering) {
+        const mouseEvent = e as MouseEvent;
+        let x = mouseEvent.clientX + 20;
+        let y = mouseEvent.clientY + 20;
+        
+        const previewRect = preview.getBoundingClientRect();
+        
+        // Prevent horizontal overflow
+        if (x + previewRect.width > window.innerWidth) {
+          x = mouseEvent.clientX - previewRect.width - 20;
+        }
+        
+        // Prevent vertical overflow
+        if (y + previewRect.height > window.innerHeight) {
+          y = mouseEvent.clientY - previewRect.height - 20;
+        }
+        
+        preview.style.left = `${x}px`;
+        preview.style.top = `${y}px`;
+      }
+    });
+
+    trigger.addEventListener('mouseleave', () => {
+      isHovering = false;
+      preview.classList.remove('is-visible');
+    });
+  });
+</script>

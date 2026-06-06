@@ -1,0 +1,88 @@
+---
+---
+<div id="preloader" class="fixed inset-0 z-[999] bg-thunder flex flex-col items-center justify-center transition-transform duration-[800ms] ease-[cubic-bezier(0.85,0,0.15,1)]">
+  <div class="overflow-hidden mb-4">
+    <div class="text-bg font-serif text-3xl tracking-widest uppercase">RYNE<span class="text-accent">.</span>DEV</div>
+  </div>
+  <div class="text-bg font-mono text-xs tracking-[0.2em]" id="preloader-counter">0%</div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const preloader = document.getElementById('preloader');
+    const counter = document.getElementById('preloader-counter');
+    
+    if (!preloader || !counter) return;
+
+    // Force scroll to top on load to prevent weird jumping
+    window.scrollTo(0, 0);
+
+    const elements = document.querySelectorAll('img, [data-image]');
+    const imagesToLoad = Array.from(elements).map(el => {
+      if (el.tagName.toLowerCase() === 'img') {
+        return (el as HTMLImageElement).src;
+      }
+      return el.getAttribute('data-image');
+    }).filter(src => src && src !== 'undefined');
+
+    const uniqueImages = [...new Set(imagesToLoad)];
+    let loadedCount = 0;
+    const totalImages = uniqueImages.length;
+    let hasFinished = false;
+
+    const updateProgress = () => {
+      if (hasFinished) return;
+      
+      const percentage = totalImages === 0 ? 100 : Math.floor((loadedCount / totalImages) * 100);
+      counter.textContent = `${percentage}%`;
+      
+      if (loadedCount >= totalImages) {
+        hasFinished = true;
+        // Wait for next frame to ensure 100% is rendered
+        requestAnimationFrame(() => {
+          setTimeout(finishLoading, 400); // Premium aesthetic pause at 100%
+        });
+      }
+    };
+
+    const finishLoading = () => {
+      // Slide preloader up
+      preloader.style.transform = 'translateY(-100%)';
+      
+      // Let body animations start
+      document.body.classList.add('is-loaded');
+      document.body.style.overflow = '';
+      
+      // Remove preloader from DOM after transition
+      setTimeout(() => {
+        preloader.remove();
+      }, 850);
+    };
+
+    if (totalImages === 0) {
+      updateProgress();
+    } else {
+      uniqueImages.forEach(src => {
+        if (!src) return;
+        const img = new Image();
+        img.onload = () => {
+          loadedCount++;
+          updateProgress();
+        };
+        img.onerror = () => {
+          loadedCount++;
+          updateProgress();
+        };
+        img.src = src;
+      });
+    }
+
+    // Safety timeout of 5s in case of hanging requests
+    setTimeout(() => {
+      if (!hasFinished) {
+        loadedCount = totalImages;
+        updateProgress();
+      }
+    }, 5000);
+  });
+</script>
