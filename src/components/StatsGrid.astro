@@ -1,5 +1,15 @@
 ---
+import { projects } from '../data/projects'
+import { roles, certifications } from '../data/experience'
 
+const totalProjects = projects.length
+const totalRoles = roles.length
+const totalCertifications = certifications.length
+const awsCredentials = certifications.filter(c => c.title.includes('AWS')).length
+const serviceNowCredentials = certifications.filter(c => c.title.includes('ServiceNow')).length
+
+// Assuming Hackathons won is based on Alaga.ai which was a Finalist/Winner
+const hackathonsWon = projects.filter(p => p.longDescription?.includes('Challenge') || p.longDescription?.includes('Hackathon')).length || 1
 ---
 
 <section class="container mx-auto px-4 md:px-8 pb-16 section-enter" id="stats">
@@ -10,25 +20,25 @@
         <span class="font-mono text-text-muted">Nº 01</span>
         <span class="font-mono">track-record</span>
       </div>
-      <div class="font-serif text-[clamp(4rem,8vw,5.5rem)] leading-none tracking-[-0.04em] mb-1.5">9<span class="text-[0.5em] align-super ml-[2px]">+</span></div>
+      <div class="font-serif text-[clamp(4rem,8vw,5.5rem)] leading-none tracking-[-0.04em] mb-1.5">{totalProjects}<span class="text-[0.5em] align-super ml-[2px]">+</span></div>
       <div class="font-mono text-[0.65rem] tracking-[0.1em] mb-10">PROJECTS SHIPPED</div>
 
       <ul class="flex flex-col">
         <li class="flex justify-between items-center py-[0.85rem] border-b border-dashed border-border-light last:border-none text-[0.85rem]">
           <span>Certifications earned</span>
-          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">10</span>
+          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">{totalCertifications}</span>
         </li>
         <li class="flex justify-between items-center py-[0.85rem] border-b border-dashed border-border-light last:border-none text-[0.85rem]">
           <span>AWS credentials</span>
-          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">4</span>
+          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">{awsCredentials}</span>
         </li>
         <li class="flex justify-between items-center py-[0.85rem] border-b border-dashed border-border-light last:border-none text-[0.85rem]">
           <span>ServiceNow credentials</span>
-          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">3</span>
+          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">{serviceNowCredentials}</span>
         </li>
         <li class="flex justify-between items-center py-[0.85rem] border-b border-dashed border-border-light last:border-none text-[0.85rem]">
           <span>Hackathons won</span>
-          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">1</span>
+          <span class="font-mono font-medium text-[0.72rem] md:text-[0.8rem] text-right">{hackathonsWon}</span>
         </li>
       </ul>
     </div>
@@ -39,7 +49,7 @@
         <span class="font-mono text-text-muted">Nº 02</span>
         <span class="font-mono">primary-stack</span>
       </div>
-      <div class="font-serif text-accent text-[clamp(4rem,8vw,5.5rem)] leading-none tracking-[-0.04em] mb-1.5">6</div>
+      <div class="font-serif text-accent text-[clamp(4rem,8vw,5.5rem)] leading-none tracking-[-0.04em] mb-1.5">{totalRoles}</div>
       <div class="font-mono text-accent text-[0.65rem] tracking-[0.1em] mb-10">PROFESSIONAL ROLES</div>
 
       <ul class="flex flex-col">

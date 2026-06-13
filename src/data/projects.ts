@@ -17,7 +17,7 @@ const projectData: Omit<Project, 'num'>[] = [
     longDescription:
       'Developed an immersive, broadcast-quality platform to track competitive brackets, live standings, and granular post-game statistics for the Wild Rounds Pilipinas Open. The system features deep player performance analytics, interactive head-to-head matchups, and dynamic tournament tree visualizations. It also includes live meta-analysis tracking champion pick/ban rates and role distributions, all wrapped in a premium, fully-responsive glassmorphic UI.',
     image: '/img/wbs-wildrounds.webp',
-    stack: 'Astro, Tailwind CSS, TypeScript, React, Node.js, PostgreSQL',
+    stack: 'Astro / TS / PostgreSQL',
     year: '2026',
     href: 'https://wildroundspilipinasopen.com/',
   },
@@ -118,5 +118,5 @@ const projectData: Omit<Project, 'num'>[] = [
 
 export const projects: Project[] = projectData.map((project, index) => ({
   ...project,
-  num: index.toString().padStart(2, '0')
+  num: (index + 1).toString().padStart(2, '0')
 }))
